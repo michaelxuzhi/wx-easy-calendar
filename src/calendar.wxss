@@ -1,0 +1,185 @@
+/* 自写日历区域 */
+.cal-container {
+  /* height: 800rpx; */
+  width: calc(100vw - 60rpx);
+  margin: 0 30rpx;
+  border-radius: 20rpx;
+  /* background-color: rgb(226, 222, 222); */
+  background-color: #fff;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  font-family: 'Baloo';
+}
+
+.cal-bg-dark {
+  background-color: #504f4f;
+}
+
+.cal-header {
+  height: 80rpx;
+  /* background-color: red; */
+  display: flex;
+  text-align: center;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+}
+
+.cal-left {
+  flex: 0.5;
+  /* background-color: #fff; */
+}
+
+.cal-left-bg-dark {
+  color: #ffffff;
+}
+
+.cal-middle {
+  flex: 2;
+  display: flex;
+  width: 100%;
+}
+
+.cal-middle-text {
+  flex: 0.5;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.cal-middle-bg-dark {
+  color: #ffffff;
+}
+
+.btn-cal {
+  flex: 0.2;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.cal-right {
+  flex: 0.5;
+  /* background-color: #fff; */
+}
+
+.cal-right-bg-dark {
+  color: #ffffff;
+}
+
+.cal-panel {
+  height: 40rpx;
+  /* background-color: green; */
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  display: flex;
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.day_item {
+  flex: 1;
+  color: rgb(175, 174, 174);
+}
+
+.day_selected {
+  color: black;
+  font-weight: bold;
+}
+
+.day-selected-bg-dark {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.cal-body {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: calc(100vw - 60rpx);
+  padding: 0 20rpx;
+  font-size: 35rpx;
+}
+
+
+.date_item {
+  width: calc((100vw - 100rpx)/7);
+  height: calc((100vw - 100rpx)/7);
+  line-height: calc((100vw - 100rpx)/7);
+  margin-bottom: 20rpx;
+}
+
+.date_item_month {
+  color: rgb(60, 60, 60);
+}
+
+.date_item_month_no {
+  color: rgb(175, 174, 174);
+}
+
+.date_item_month_dark {
+  color: rgb(255, 255, 255);
+}
+
+.selected {
+  position: relative;
+  color: #ffffff;
+  font-size: 40rpx;
+  font-weight: bold;
+  background-color: rgb(100, 90, 165);
+  border-radius: 50%;
+  transform: scale(0.8);
+}
+
+.selected-bg-dark {
+  position: relative;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgb(160, 150, 240);
+  border-radius: 50%;
+  transform: scale(0.8);
+}
+
+.selected::before {
+  position: absolute;
+  content: '';
+  bottom: 10rpx;
+  left: calc(50% - 5rpx);
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: rgb(209, 32, 32);
+}
+
+.selected-bg-dark::before {
+  position: absolute;
+  content: '';
+  bottom: 10rpx;
+  left: calc(50% - 5rpx);
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background-color: #fffb02;
+}
+
+/* 外部css */
+.cu-btn {
+  position: relative;
+  border: 0rpx;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  /* height: 64rpx; */
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  overflow: visible;
+  margin-left: initial;
+  transform: translate(0rpx, 0rpx);
+  margin-right: initial;
+}
+
+.bg-gray {
+  background-color: #f0f0f0;
+  color: #333333;
+}
