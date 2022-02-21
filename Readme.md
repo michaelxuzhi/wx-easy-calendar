@@ -24,10 +24,10 @@
   ```
 
 - 允许项目使用npm模块
-  ![image-20220222001345197](wx-easy-calendar.readme.assets/image-20220222001345197.png)
+  ![image-20220222001345197](Readme.assets/image-20220222001345197.png)
 
 - 开始构建
-  ![image-20220222001414041](wx-easy-calendar.readme.assets/image-20220222001414041.png)
+  ![image-20220222001414041](Readme.assets/image-20220222001414041.png)
 
 - 等待构建完成，项目根目录下会出现`miniprogram_npm`文件夹，包含`wx-easy-calendar`的一切
 
@@ -37,7 +37,7 @@
 
 - 局部使用
   - 在需要使用的页面的 `json` 文件中，配置组件
-    ![image-20220222001657743](wx-easy-calendar.readme.assets/image-20220222001657743.png)
+    ![image-20220222001657743](Readme.assets/image-20220222001657743.png))
   - key：`easy-calendar` 为自定义组件标签
   - value：指向npm文件夹下`wx-easy-calendar`组件的`js`文件
 - 全局使用
@@ -48,13 +48,13 @@
 ## 正式使用 Render
 
 - 在页面的 `wxml` 中，使用配置好的`自定义标签`
-  ![image-20220222002644310](wx-easy-calendar.readme.assets/image-20220222002644310.png)
+  ![image-20220222002644310](Readme.assets/image-20220222002644310.png)
 
 - 页面的渲染
 
-  ![image-20220222002939341](wx-easy-calendar.readme.assets/image-20220222002939341.png)
+  ![image-20220222002846113](Readme.assets/image-20220222002846113.png)
 
-  ![image-20220222002846113](wx-easy-calendar.readme.assets/image-20220222002846113.png)
+  ![image-20220222002939341](Readme.assets/image-20220222002939341.png)
 
   ---
 
