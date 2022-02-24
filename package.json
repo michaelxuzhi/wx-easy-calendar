@@ -1,7 +1,7 @@
 {
   "name": "wx-easy-calendar",
   "miniprogram": "src",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "简单明了的微信小程序日历组件，easy-simple calendar component for wx-miniprogram",
   "main": "index.js",
   "scripts": {
