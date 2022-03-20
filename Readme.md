@@ -4,8 +4,8 @@
 
 - 这是一个面向广大微信小程序开发者提供的开源日历组件；
 - This is an open-source calendar component for all  WeiXin miniprogram developers;
-- 集成了基本的日历显示、日期选择、日期切换；提供暗黑模式选择和日历折叠的功能；
-- Including functions like basic calendar display, date selection, date switching, it also provides a dark mode selection and calendar folding functions;
+- 集成了基本的日历显示、日期选择、日期切换；提供暗黑模式选择的功能；
+- Including functions like basic calendar display, date selection, date switching, it also provides a dark mode selection;
 
 ---
 
@@ -61,10 +61,9 @@
   ## 用法介绍 Usage
 
   - 正常显示当前日历
-  - tap选中日期
+  - 点击选中日期
   - 左右滑动切换月份
   - 点击顶部左右箭头切换月份
   - 点击顶部年份/月份，精确选择日期
   - 点击[Now]，回到当前日期
-  - 点击[暗]，折叠日历
-  - 长按[按]，切换显示模式（light/dark）
+  - 点击[暗]，切换显示模式（light/dark）

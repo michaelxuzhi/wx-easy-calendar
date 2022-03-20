@@ -1,32 +1,32 @@
-function ReDate() {
-  let date = new Date();
-  let year = date.getFullYear(); // 获取年 111
-  let month = date.getMonth(); // 获取正常月份-1 111
-  let month_en = getMon(date.getMonth()); // 获取月份英文简写
-  let date_d = date.getDate(); // 获取日期 111
-  let day = date.getDay(); // 获取星期 111
-  let day_cn = getWeek(date.getDay()); // 获取星期中文缩写 
-  let firstDay = new Date(year, month, 1).getDay(); // 获取某月第一天星期
+const DateContruct = new Date();
+
+function getDateInfo() {
+  let year = DateContruct.getFullYear(); // 获取年
+  let month = DateContruct.getMonth(); // 获取正常月份-1
+  let month_en = getENMon(DateContruct.getMonth()); // 获取月份英文简写
+  let date = DateContruct.getDate(); // 获取日期
+  let day = DateContruct.getDay(); // 获取星期
+  let day_cn = getWeek(DateContruct.getDay()); // 获取星期中文缩写
+  let firstDay_day = new Date(year, month, 1).getDay(); // 获取某月第一天星期
   let monthDay = new Date(year, month + 1, 0).getDate(); // 获取某月天数
-  let today_day = new Date(year, month, date_d).getDay(); // 获取某月某日星期
+  let today_day = new Date(year, month, date).getDay(); // 获取某月某日星期
   return {
     year,
     month,
     month_en,
-    date_d,
+    date,
     day,
     day_cn,
-    firstDay,
+    firstDay_day,
     monthDay,
     today_day,
   };
 }
 
-function ReTime() {
-  let date = new Date();
-  let hour = get_0(date.getHours());
-  let mins = get_0(date.getMinutes());
-  let sec = get_0(date.getSeconds());
+function getTimeInfo() {
+  let hour = formatTime(DateContruct.getHours());
+  let mins = formatTime(DateContruct.getMinutes());
+  let sec = formatTime(DateContruct.getSeconds());
   return {
     hour,
     mins,
@@ -34,12 +34,12 @@ function ReTime() {
   };
 }
 
-function getWeek(weeknum) {
+function getWeek(weekNum) {
   let week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-  return week[weeknum];
+  return week[weekNum];
 }
 
-function getMon(mon) {
+function getENMon(mon) {
   let _mon = [
     'Jan',
     'Feb',
@@ -57,11 +57,11 @@ function getMon(mon) {
   return _mon[mon];
 }
 
-function get_0(i) {
+function formatTime(i) {
   return i >= 10 ? '' + i : '0' + i;
 }
 
 export {
-  ReDate,
-  ReTime
+  getDateInfo,
+  getTimeInfo
 };

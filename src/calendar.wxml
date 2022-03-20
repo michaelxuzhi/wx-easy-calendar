@@ -1,46 +1,45 @@
 <!-- 自己写的日历组件区域--开始 -->
-<view class="cal-container {{ dark ? 'cal-bg-dark' : '' }}">
+<view class="cal-container {{ isDark ? 'cal-bg-dark' : '' }}">
   <view class="cal-header">
-    <view class="cal-left {{ dark ? 'cal-left-bg-dark' : '' }}" bindtap="lastMonth" data-month="{{ month }}"
-      data-year="{{ year }}">
+    <view class="cal-left {{ isDark ? 'cal-left-bg-dark' : '' }}" bindtap="switchLastMonth" data-month="{{ month }}" data-year="{{ year }}">
       <!-- <text class="cuIcon-back"></text> -->
       <view>←</view>
     </view>
-    <view class="cal-middle {{ dark ? 'cal-middle-bg-dark' : '' }}">
+    <view class="cal-middle {{ isDark ? 'cal-middle-bg-dark' : '' }}">
       <view class="cal-middle-text">
         <!-- picker区域 -->
-        <picker mode="date" value="{{ pickDate }}" start="1000-01-01" end="2999-12-31" fields="month"
-          bindchange="bindDateChange">
-          <view>{{ year }}/{{ month_show }}</view>
+        <picker mode="date" value="{{ pickDate }}" start="1000-01-01" end="2999-12-31" fields="month" bindchange="bindDateChange">
+          <view>{{ year }}/{{ monthShow }}</view>
         </picker>
       </view>
-      <button class="cu-btn shadow btn-cal {{ dark ? 'bg-grey' : 'bg-gray' }}" bindtap="backNow">
+      <button class="cu-btn shadow btn-cal {{ isDark ? 'bg-grey' : 'bg-gray' }}" bindtap="backNow">
         Now
       </button>
       <!-- <text class="cuIcon-creative" bindtap="switchCss"> </text> -->
-      <text class="cuIcon-btn" bindtap="fold" bindlongpress="switchCss">暗</text>
+      <text class="cuIcon-btn" bindtap="switchCss">暗</text>
     </view>
-    <view class="cal-right {{ dark ? 'cal-right-bg-dark' : '' }}" bindtap="nextMonth" data-month="{{ month }}"
-      data-year="{{ year }}">
+    <view class="cal-right {{ isDark ? 'cal-right-bg-dark' : '' }}" bindtap="switchNextMonth" data-month="{{ month }}" data-year="{{ year }}">
       <!-- <text class="cuIcon-right"></text> -->
       <view>→</view>
     </view>
   </view>
   <view class="cal-panel">
-    <view class="day_item {{index == today_day ? (dark ? 'day-selected-bg-dark' : 'day_selected') : ''}}"
-      wx:for="{{ day_lang ? day[0] : day[1] }}" wx:key="index">
+    <view class="day_item {{index == day ? (isDark ? 'day-selected-bg-dark' : 'day_selected') : ''}}" wx:for="{{ day_language ? dayLang[day_language] : dayLang['CHN'] }}" wx:key="index">
       {{ item }}
     </view>
   </view>
-  <view class="cal-body" bindtouchstart="ListTouchStart" bindtouchmove="ListTouchMove" bindtouchend="ListTouchEnd"
-    data-month="{{ month }}" data-year="{{ year }}">
-    <block wx:for="{{ monthDayFinal }}" wx:key="d">
-      <view
-        class="date_item {{item.month == month? dark?'date_item_month_dark':'date_item_month':'date_item_month_no'}}"
-        bindtap="clickDate" data-date="{{item.date}}" data-month="{{item.month}}" data-year="{{item.year}}">
-        <view class="{{item.date == today && item.month == month ?(dark ? 'selected-bg-dark' : 'selected') : ''}}">
-          {{item.date}}</view>
-      </view>
-    </block>
+  <view class="cal-body">
+    <swiper class="swiper-container" circular="true" interval="5000" duration="500" bindchange="getSwiperCurrent" current="{{current}}">
+      <swiper-item wx:for="{{monthFinal}}" wx:key="p" wx:for-item="monthFinal">
+        <view class="cal-body-last" data-line="{{monthFinal.line}}">
+          <block wx:for="{{ monthFinal.date }}" wx:key="d">
+            <view class="date_item {{item.month == month? isDark? 'date_item_month_dark': 'date_item_month': 'date_item_month_no'}}" bindtap="tapDate" data-year="{{item.year}}" data-month="{{item.month}}" data-date="{{item.date}}" style="margin-bottom:{{monthFinal.line<6?20:0}}rpx;">
+              <view class="{{item.date == date && item.month == month? isDark? 'selected-bg-dark': 'selected': ''}}">
+                {{ item.date }}</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+    </swiper>
   </view>
 </view>
