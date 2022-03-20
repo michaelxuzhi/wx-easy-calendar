@@ -89,6 +89,26 @@
 }
 
 .cal-body {
+  /* display: flex; */
+  /* height: 550rpx; */
+  /* width: 100%; */
+}
+
+.swiper-container {
+  height: 550rpx;
+  /* height: 680rpx; */
+}
+
+.cal-body-last {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 0 20rpx;
+  /* margin: 0 30rpx; */
+  font-size: 35rpx;
+}
+
+.cal-body-this {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
@@ -102,7 +122,7 @@
   width: calc((100vw - 100rpx)/7);
   height: calc((100vw - 100rpx)/7);
   line-height: calc((100vw - 100rpx)/7);
-  margin-bottom: 20rpx;
+  /* margin-bottom: 20rpx; */
 }
 
 .date_item_month {
